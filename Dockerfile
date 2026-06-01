@@ -27,6 +27,24 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 
+# Build-time metadata, injected by CI (docker/metadata-action) or `docker build --build-arg`.
+ARG VERSION=dev
+ARG REVISION
+ARG CREATED
+
+# OCI image labels — surfaced as title/description/source/license on Docker Hub and GHCR.
+LABEL org.opencontainers.image.title="Mongui" \
+  org.opencontainers.image.description="A lightweight, self-hosted web UI for browsing and editing MongoDB — a maintained replacement for the deprecated mongo-express." \
+  org.opencontainers.image.url="https://github.com/Soumya7681/monogui" \
+  org.opencontainers.image.source="https://github.com/Soumya7681/monogui" \
+  org.opencontainers.image.documentation="https://github.com/Soumya7681/monogui#readme" \
+  org.opencontainers.image.licenses="MIT" \
+  org.opencontainers.image.authors="Soumyaranjan" \
+  org.opencontainers.image.vendor="Soumyaranjan" \
+  org.opencontainers.image.version="${VERSION}" \
+  org.opencontainers.image.revision="${REVISION}" \
+  org.opencontainers.image.created="${CREATED}"
+
 # Run as a non-root user.
 RUN groupadd --system --gid 1001 nodejs \
   && useradd --system --uid 1001 --gid nodejs nextjs

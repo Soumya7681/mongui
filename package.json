@@ -2,6 +2,31 @@
   "name": "mongui",
   "version": "0.1.0",
   "private": true,
+  "description": "A lightweight, self-hosted web UI for browsing and editing MongoDB — a maintained replacement for the deprecated mongo-express.",
+  "keywords": [
+    "mongodb",
+    "mongo",
+    "mongo-express",
+    "mongodb-gui",
+    "mongodb-admin",
+    "database-admin",
+    "admin-ui",
+    "database-management",
+    "self-hosted",
+    "nextjs",
+    "react",
+    "docker"
+  ],
+  "homepage": "https://github.com/Soumya7681/monogui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soumya7681/monogui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Soumya7681/monogui/issues"
+  },
+  "author": "Soumyaranjan",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
